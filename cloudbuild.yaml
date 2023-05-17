@@ -1,19 +1,11 @@
 steps:
-# - name: 'gcr.io/cloud-builders/gcloud'
-#   args:
-#   - 'container'
-#   - 'images'
-#   - 'delete'
-#   - 'gcr.io/carbon-stone-372103/test-img'
-#   - '--force-delete-tags'
-
-- name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/carbon-stone-372103/test-img", "."]
-images: ['gcr.io/carbon-stone-372103/test-img']
-
-  # - name: "gcr.io/cloud-builders/gcloud"
-  #   args:
-  #     - "container"
-  #     - "images"
-  #     - "delete"
-  #     - "gcr.io/carbon-stone-372103/github.com/sumetph/test-cicd/test-img"
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'us-west2-docker.pkg.dev/carbon-stone-372103/test-repo/test-img'
+      - '.'
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-west2-docker.pkg.dev/carbon-stone-372103/test-repo/test-img'
