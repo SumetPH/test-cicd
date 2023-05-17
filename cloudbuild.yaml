@@ -1,7 +1,6 @@
 steps:
   - name: "gcr.io/cloud-builders/docker"
     args: ["build", "-t", "gcr.io/carbon-stone-372103/test-img", "."]
-  images: ["gcr.io/carbon-stone-372103/test-img"]
 
   # - name: "gcr.io/cloud-builders/gcloud"
   #   args:
